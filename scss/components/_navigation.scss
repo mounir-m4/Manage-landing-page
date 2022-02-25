@@ -1,0 +1,97 @@
+@use '../utilities/layout' as *;
+@use '../utilities/buttons' as *;
+@use '../utilities/mixins' as *;
+@use '../utilities/typography' as *;
+@use '../utilities/variables' as *;
+
+.main-nav {
+	.nav-links {
+		@include reset-ul;
+		a {
+			@include style-a;
+		}
+	}
+
+	// hamburger menu
+	.hamburger {
+		display: none;
+	}
+	.hamburger {
+		position: relative;
+		align-items: center;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		padding: 1rem 0.5rem;
+		&-btn {
+			cursor: pointer;
+			width: 30px;
+			height: 2px;
+			background: $dark-blue;
+			border-radius: 10px;
+			transition: all 0.5s ease-in-out;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 30px;
+				height: 2px;
+				background: $dark-blue;
+				border-radius: 10px;
+				transition: all 0.5s ease-in-out;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 30px;
+				height: 2px;
+				background: $dark-blue;
+				border-radius: 10px;
+				transition: all 0.5s ease-in-out;
+			}
+			&:before {
+				transform: translateY(-8px);
+			}
+			&:after {
+				transform: translateY(8px);
+			}
+		}
+		// toggle menu btn
+		.open {
+			transform: translateX(-50px);
+			background: transparent;
+			&:before {
+				transform: rotate(45deg) translate(35px, -35px);
+			}
+			&:after {
+				transform: rotate(-45deg) translate(35px, 35px);
+			}
+		}
+	}
+	// menu on mobile
+	.menu-mobile {
+		position: absolute;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		top: 10%;
+		left: 10%;
+		width: 80%;
+		background: $white;
+		color: $dark-blue;
+		height: 60vh;
+		z-index: 100;
+		list-style: none;
+		padding: 2rem;
+		box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+		border-radius: 5px;
+		@include reset-ul;
+		li {
+			margin: 1rem auto;
+			a {
+				@include style-a;
+				color: $very-dark-blue;
+				font-weight: bold !important;
+				font-size: 1.1rem;
+			}
+		}
+	}
+}

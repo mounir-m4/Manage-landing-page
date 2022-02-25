@@ -1,0 +1,28 @@
+@use './variables' as *;
+
+//backgrounds
+@mixin bg-orange {
+	background: $bright-red;
+}
+@mixin bg-card {
+	background: #fafafa;
+}
+@mixin bg-dark {
+	background: $very-dark-blue;
+}
+
+// mixins styles
+@mixin reset-ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+// anchors
+@mixin style-a {
+	text-decoration: none;
+	margin: 0 1rem;
+	font-size: 1rem;
+	transition: color 0.2s ease;
+	text-transform: capitalize;
+	padding-bottom: 0.1rem;
+}

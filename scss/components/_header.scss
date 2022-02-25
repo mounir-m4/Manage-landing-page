@@ -1,0 +1,49 @@
+@use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
+
+.main-header {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	//background pattern
+	&::before {
+		content: '';
+		position: absolute;
+		top: -10%;
+		left: 55%;
+		background: url('../images/bg-tablet-pattern.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+	}
+	//navigation
+	.main-nav {
+		ul {
+			@include reset-ul;
+			a {
+				@include style-a;
+				color: $dark-blue;
+				opacity: 0.9;
+				font-weight: 500;
+				&:hover {
+					color: $grayish-blue;
+				}
+			}
+		}
+	}
+
+	// header content
+	.header-content {
+		.description {
+			flex: 1;
+		}
+		.hero-img {
+			flex: 1;
+			img {
+				width: 100%;
+			}
+		}
+	}
+}

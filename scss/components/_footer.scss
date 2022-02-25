@@ -1,0 +1,110 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+.main-footer {
+	@include bg-dark;
+	.col-one {
+		.social {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 18vh;
+			.social-icons {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				a {
+					height: 1.5rem;
+					svg path {
+						transition: fill 150ms ease-in;
+						&:hover {
+							fill: $bright-red;
+						}
+					}
+				}
+			}
+		}
+	}
+	.wrapper{
+		display: flex;
+		flex: 1;
+		justify-content: space-around;
+		overflow: hidden;
+	}
+	.col-two,
+	.col-three {
+		ul {
+			@include reset-ul;
+			flex-direction: column;
+			align-items: baseline;
+			li {
+				margin: 0.3rem 0;
+				a {
+					@include style-a;
+					color: $light-gray;
+					font-size: 1rem;
+					opacity: 0.8;
+					letter-spacing: 0.5px;
+					transition: color 0.2s ease;
+					&:hover {
+						color: $bright-red;
+					}
+				}
+			}
+		}
+	}
+	.col-four {
+		height: 18vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.form-group {
+			position: relative;
+			display: flex;
+			gap: 0.5rem;
+			.form-control {
+				padding: 0.8rem 1.5rem;
+				width: 100%;
+				border-radius: 2rem;
+				outline: none;
+				border: 1px solid transparent;
+				font-size: 0.9rem;
+			}
+
+			input[type='submit'] {
+				box-shadow: none;
+			}
+		}
+		p {
+			font-size: 0.8rem;
+			color: $grayish-blue;
+			opacity: 0.9;
+			text-align: end;
+		}
+		// error input
+		.error-text {
+			display: none;
+			transition: all 0.2s ease;
+		}
+		.error-text {
+			display: none;
+			position: absolute;
+			bottom: -50%;
+			left: 2%;
+			color: $bright-red;
+			opacity: 0.8;
+			font-style: italic;
+		}
+		.form-group.error .form-control {
+			border: 1px solid $bright-red;
+			&::placeholder {
+				color: $bright-red;
+				font-size: .8rem;
+			}
+		}
+		.form-group.error .error-text,
+		.form-group.error {
+			display: flex;
+		}
+	}
+}

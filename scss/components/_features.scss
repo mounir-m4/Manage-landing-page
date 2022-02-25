@@ -1,0 +1,44 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+// features
+.features {
+	overflow: hidden;
+	position: relative;
+	&-container {
+		gap: 4rem;
+		
+	}
+	.feature-heading {
+		flex: 1;
+		.h2 {
+			margin: 0 0 2rem 0;
+			padding-right: 2rem;
+		}
+		.lead {
+			padding-right: 8rem;
+		}
+	}
+	.feature-description {
+		flex: 1;
+		.sub-heading {
+			gap: 2rem;
+			span {
+				@include bg-orange;
+				color: $light-gray;
+				padding: 0.5rem 1.2rem;
+				border-radius: 20px;
+			}
+			.feature {
+				p:first-child {
+					font-weight: 700;
+					color: $dark-blue;
+					font-size: 1.1rem;
+				}
+				p:nth-child(2) {
+					font-size: 0.9rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@use './medias/media' as *;
+@use './components/navigation' as *;
+@use './components/header' as *;
+@use './components/features' as *;
+@use './components/testimonials' as *;
+@use './components/cta' as *;
+@use './components/footer' as *;
+@use './utilities/spacing' as *;
+@use './utilities/animation' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Be Vietnam Pro', sans-serif;
+}
